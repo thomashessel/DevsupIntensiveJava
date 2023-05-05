@@ -1,5 +1,6 @@
 package com.hessel.treinoDevSup.IntensivoJava.Entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,10 +14,20 @@ public class Inss {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column (name ="fxName")
 	private String faixa;
+	
+	@Column (name ="vlInicial")
 	private Double valorInicial;
+	
+	@Column (name ="vlFinal")
 	private Double valorFinal;
+	
+	@Column (name ="vlMaxFx")
 	private Double valorMaxPorFaixa;
+	
+	@Column (name ="percentFx")
 	private Double porcentagemFaixa;
 	
 	
