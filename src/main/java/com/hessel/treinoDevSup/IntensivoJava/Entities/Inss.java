@@ -33,41 +33,22 @@ public class Inss {
 	
 	public Long getId() {
 		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	}	
 	public String getFaixa() {
 		return faixa;
-	}
-	public void setFaixa(String faixa) {
-		this.faixa = faixa;
 	}
 	public Double getValorInicial() {
 		return valorInicial;
 	}
-	public void setValorInicial(Double valorInicial) {
-		this.valorInicial = valorInicial;
-	}
 	public Double getValorFinal() {
 		return valorFinal;
-	}
-	public void setValorFinal(Double valorFinal) {
-		this.valorFinal = valorFinal;
 	}
 	public Double getValorMaxPorFaixa() {
 		return valorMaxPorFaixa;
 	}
-	public void setValorMaxPorFaixa(Double valorMaxPorFaixa) {
-		this.valorMaxPorFaixa = valorMaxPorFaixa;
-	}
 	public Double getPorcentagemFaixa() {
 		return porcentagemFaixa;
 	}
-	public void setPorcentagemFaixa(Double porcentagemFaixa) {
-		this.porcentagemFaixa = porcentagemFaixa;
-	}
-
 
 
 }
