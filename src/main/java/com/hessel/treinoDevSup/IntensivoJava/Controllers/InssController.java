@@ -9,23 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hessel.treinoDevSup.IntensivoJava.Entities.Inss;
-import com.hessel.treinoDevSup.IntensivoJava.Repositories.InssRepository;
+import com.hessel.treinoDevSup.IntensivoJava.Services.InssService;
 
 @RestController
 @RequestMapping(value="/inss")
 public class InssController {
 
 	@Autowired
-	private InssRepository inss;
+	private InssService inssService;
 	
 	@GetMapping(value="/all")
-	public List<Inss> paranAllValues(){
-		List<Inss> lista = inss.findAll();
-		return lista;
+	public List<Inss> paranAllValues(){			
+		return inssService.findAll();
 	}
 	@GetMapping(value="/{id}")
 	public Inss paramByIdValue (@PathVariable("id") Long id) {
-		Inss _inss = inss.findById(id).get();
-		return _inss;
+		return inssService.findId(id);
 	}
 }

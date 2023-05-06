@@ -9,24 +9,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hessel.treinoDevSup.IntensivoJava.Entities.Irpf;
-import com.hessel.treinoDevSup.IntensivoJava.Repositories.IrpfRepository;
+import com.hessel.treinoDevSup.IntensivoJava.Services.IrpfService;
 
 @RestController
 @RequestMapping(value="/irpf")
 public class IrpfController {
 	
 	@Autowired
-	private IrpfRepository irpf;
+	private IrpfService irpfService;
 	
 	@GetMapping(value="/all")
-	public List<Irpf> paranValues(){
-		List<Irpf> lista = irpf.findAll();
-		return lista;
+	public List<Irpf> paranAllValues(){
+		return irpfService.findAll();
 	}
 	@GetMapping(value="/{id}")
 	public Irpf paramByIdValue (@PathVariable("id") Long id) {
-		Irpf _irpf = irpf.findById(id).get();
-		return _irpf;
+		return irpfService.findId(id);
 	}
 
 }
